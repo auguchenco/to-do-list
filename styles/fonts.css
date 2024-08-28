@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "great-vibes";
+    src: url("../fonts/great-vibes/GreatVibes-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "montserrat-regular";
+    src: url("../fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "montserrat-italic";
+    src: url("../fonts/montserrat/Montserrat-Italic.ttf") format("truetype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "montserrat-bold";
+    src: url("../fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 600;
+}

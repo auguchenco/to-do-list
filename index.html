@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- -->
+    <meta name="description" content="This site is about a To-Do List">
+    <meta name="keywords" content="to do, to-do, todo, to do list, to-do list, todo list, list, task, tasks, task list, list of tasks">
+    <meta name="author" content="Andres Auguchenco">
+
+    <meta name="robots" content="noarchive noimageindex">
+    <meta name="title" content="To-Do List">
+
+    <meta name="og:title" content="To-Do List">
+    <meta name="og:site_name" content="TODOLIST.COM">
+    <meta name="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/75/My_%22To_Do%22_List-_Yay_for_functional_tattoos%21_%284616960925%29.jpg">
+    <meta name="og:description" content="Create your own To-Do List">
+    <meta name="og:url" content="https://www.todolist.com/">
+    <!-- -->
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <script defer async src="scripts/main.js" type="module"></script>
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <header class="header">
+
+
+        <div class="header__item header__item--title">
+            <h1 class="title">To-Do List</h1>
+        </div>
+
+
+        <div class="header__item header__item--search-bar">
+            <input type="text" name="searchText" id="searchText" class="input">
+            
+            <button id="searchBtn" class="button">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+            </button>
+        </div>
+
+
+        <nav class="header__item header__item--nav-menu">
+            <button id="addTaskBtn" class="button">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+            </button>
+
+            <button id="sortTaskListBtn" class="button">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>
+            </button>
+        </nav>
+
+    </header>
+
+    <main class="main">
+        <section class="task-list__container">
+            <ul id="taskList">
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© - 2024</p>
+    </footer>
+
+</body>
+
+<!--
+A-Z: <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sort-descending"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l9 0" /><path d="M4 12l7 0" /><path d="M4 18l7 0" /><path d="M15 15l3 3l3 -3" /><path d="M18 6l0 12" /></svg>
+Z-A: <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sort-ascending"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l7 0" /><path d="M4 12l7 0" /><path d="M4 18l9 0" /><path d="M15 9l3 -3l3 3" /><path d="M18 6l0 12" /></svg>
+-->
+
+</html>
