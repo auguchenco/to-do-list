@@ -8,13 +8,13 @@ const sortConfig = {
     sortBy: "add",
     invert: false,
 };
-// {
-//     text: string
-//     date: "yyy-mm-dd"
-//     state: pending completed all
-//     sortBy: add title date
-//     invert: bool
-// };
+
+//text -> string
+//date -> "yyy-mm-dd"
+//state -> pending completed all
+//sortBy -> add title date
+//invert -> bool
+
 
 // --- --- --- AUX FUNCTIONS --- --- ---
 
@@ -221,11 +221,11 @@ function getPopUpFormSortHTML(sortConfig) {
 
                             <div class="input__container">
                                 <label for="formTaskState" class="label">State:</label>
-                                <select name="state" id="formTaskState" class="input" required>
-                                    <option value=${sortConfig.state}></option>
-                                    <option value="all">All</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
+                                <select name="state" id="formTaskState" class="input select" required>
+                                    <option value=${sortConfig.state} clas="option"></option>
+                                    <option value="all" clas="option">All</option>
+                                    <option value="pending" clas="option">Pending</option>
+                                    <option value="completed" clas="option">Completed</option>
                                 </select>
                             </div>
 
@@ -236,11 +236,11 @@ function getPopUpFormSortHTML(sortConfig) {
 
                             <div class="input__container">
                                 <label for="formTaskSortBy" class="label">Sort by:</label>
-                                <select name="sortBy" id="formTaskSortBy" class="input" value=${sortConfig.sortBy} required>
-                                    <option value=${sortConfig.sortBy}></option>
-                                    <option value="add">Add</option>
-                                    <option value="title">Title</option>
-                                    <option value="date">Date</option>
+                                <select name="sortBy" id="formTaskSortBy" class="input select" value=${sortConfig.sortBy} required>
+                                    <option value=${sortConfig.sortBy} clas="option"></option>
+                                    <option value="add" clas="option">Add</option>
+                                    <option value="title" clas="option">Title</option>
+                                    <option value="date" clas="option">Date</option>
                                 </select>
                             </div>
 
@@ -410,7 +410,7 @@ function renderTask(task) {
     taskHTML.id = task.id;
     taskHTML.classList.add("task");
     taskHTML.ariaLabel = `Tarea: ${task.title}`
-    const date = task.date.split("-");
+    const dateText = task.date.split("-");
     taskHTML.innerHTML = `
                     <div class="task__header">
                         <input type="checkbox" aria-label="Checkbox: marca tu tarea ${task.title} como completada" class="input">
@@ -426,9 +426,13 @@ function renderTask(task) {
                         <p aria-label="Descripción de la tarea ${task.title}: ${task.description}">${task.description}</p>
                     </div>
                     <div class="task__footer">
-                        <span aria-label="Fecha de la tarea: ${task.title}">${date[2]} / ${date[1]} / ${date[0]}</span>
+                        <span aria-label="Fecha de la tarea: ${task.title}">${dateText[2]} / ${dateText[1]} / ${dateText[0]}</span>
                     </div>
     `;
+    const descriptionContainer = taskHTML.querySelector(".task__main")
+    if (task.description == undefined || task.description == "") { descriptionContainer.classList.add("hidden") }
+    const dateContainer = taskHTML.querySelector(".task__footer")
+    if (task.date == undefined || task.date == "") { dateContainer.classList.add("hidden") }
 
     // Seteamos el checkbox y configuramos las clases si el valor isCheck es true
     const chboxChecked = taskHTML.querySelector(`.task__header input[type="checkbox"]`);
