@@ -370,8 +370,8 @@ function sortTaskListAux(taskList, sortConfig) {
     if (sortConfig.date) { taskList = taskList.filter( (task) => task.date == sortConfig.date ); };
     if (sortConfig.state === "pending") { taskList = taskList.filter ( (task) => task.isCheck === false ); }
     else if (sortConfig.state === "completed") { taskList = taskList.filter ( (task) => task.isCheck === true ); };
-    if (sortConfig.sortBy === "title") { taskList.sort((a,b) => a.title - b.title); }
-    else if (sortConfig.sortBy === "date") { taskList.sort((a,b) => a.date - b.date); };
+    if (sortConfig.sortBy == "title") { taskList.sort((a, b) => a.title.localeCompare(b.title)) }
+    else if (sortConfig.sortBy === "date") { taskList.sort((a, b) => a.date.localeCompare(b.date)) };
     if (sortConfig.invert == "true") { taskList.reverse(); };
     return taskList;
 };
